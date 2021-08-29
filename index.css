@@ -131,6 +131,7 @@ body{
     outline: none;
     font-family: sans-serif;
     text-indent: 10px;
+    color: #5b5b5b;
 }
 .main .main-intro .reg-form .form-bg select option:first-child{
     color:#5b5b5b;
@@ -759,6 +760,7 @@ body{
         border: 2px solid #cbcbcb;
         outline:none;
         font-family: "MetaPro";
+        color: #5b5b5b;
     }
     
     .main .main-intro .reg-form .form-bg input::placeholder{
