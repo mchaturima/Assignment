@@ -3,7 +3,7 @@ function accordianActivity(){
     for(let i = 0;i<accordians.length;i++){
         accordians[i].addEventListener('click',function(){
             for (var j = 0; j < accordians.length; j++) {
-                accordians[j].classList.remove("active")
+                accordians[j].classList.remove("active");
             }
             this.classList.toggle('active');
         })
@@ -35,13 +35,12 @@ function footerActivity(){
 }
 
 function submitClick(){
-    console.log('calling-------------------------------------------------------------------------')
     let name = document.getElementById('fname').value;
     let email = document.getElementById('email').value;
     let phone = document.getElementById('phone').value;
-    let work_exp = document.getElementById('work_exp').value;
+    let work_exp = document.getElementById('wrk-exp-select').value;
     let org = document.getElementById('org').value;
-    let formDetails;
+    var formDetails;
     formDetails = { 
         "name":name,
         "email":email,
@@ -49,7 +48,6 @@ function submitClick(){
         "work_exp":work_exp,
         "org":org
     }
-    console.log(validateFields(formDetails));
     if(validateFields(formDetails)){
         localStorage.setItem('form-details',JSON.stringify(formDetails))
     }
@@ -59,7 +57,7 @@ function validateFields(formDetails){
     document.getElementById('error-message').innerHTML = '';
 
     if(formDetails.name.length <= 3){
-         document.getElementById('error-message').innerHTML += '<span>** Enter a valid full name. Name should be more than 2 letters</span>'
+         document.getElementById('error-message').innerHTML += '<span>** Enter a valid full name. Name should be more than 2 letters atleast.</span>'
         return false
     }
 
@@ -75,26 +73,19 @@ function validateFields(formDetails){
         document.getElementById('error-message').innerHTML += '<span>** Enter a phone number.</span>';
         return false
     }else if(isNaN(formDetails.phone)){
-        document.getElementById('error-message').innerHTML += '<span>** Please enter only numbers.</span>';
+        document.getElementById('error-message').innerHTML += '<span>** Please enter a phone number with digits between 0-9.</span>';
         return false
     }else if(formDetails.phone.length != 10){
-        document.getElementById('error-message').innerHTML += '<span>** Please enter 10 digits number.</span>';
+        document.getElementById('error-message').innerHTML += '<span>** Please enter a 10 digit phone number.</span>';
         return false
     }
 
-    if(formDetails.work_exp === ''){
-        document.getElementById('error-message').innerHTML += '<span>** Please enter work experience in years.</span>';
-        return false
-    }else if(isNaN(formDetails.work_exp)){
-        document.getElementById('error-message').innerHTML += '<span>** Enter experience in numbers only.</span>';
-        return false
-    }else if(!(/^[1-9]\d*$/.test(formDetails.work_exp))){
-        console.log('entered')
-        document.getElementById('error-message').innerHTML += '<span>** Enter number of years. Decimal points not accepted.</span>';
+    if(formDetails.work_exp === 'Work Experience'){
+        document.getElementById('error-message').innerHTML += '<span>** Please select a work experience.</span>';
         return false
     }
 
-    if(formDetails.org.length <= 3){
+    if(formDetails.org === ''){
         document.getElementById('error-message').innerHTML += '<span>** Please enter a valid organization name.</span>';
         return false
     }
@@ -110,7 +101,6 @@ function isEmail(email){
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
-
 window.addEventListener('load',function(){
     accordianActivity();
     carouselActivity();
@@ -119,7 +109,7 @@ window.addEventListener('load',function(){
     let name = document.getElementById('fname');
     let email = document.getElementById('email');
     let phone = document.getElementById('phone');
-    let work_exp = document.getElementById('work_exp');
+    let work_exp = document.getElementById('wrk-exp-select');
     let org = document.getElementById('org');
     let formDetails;
 

@@ -39,34 +39,6 @@ body{
     text-align: left;
 }
 
-/* .footer-mobile{
-    display: none;
-}
-
-.footer-desktop{
-    display: none;
-}
-
-#footer-mobile{
-    display: none;
-}
-
-#footer-desktop{
-    display: none;
-}
-
-#footer-p{
-    display: none;
-}
-
-#footer-button{
-    display: none;
-} 
-
-#footer-mobile-button{
-    display: none;
-} */
-
 /* for mobile phones */
 .main-intro-bg-overlay{
     position: relative;
@@ -106,7 +78,6 @@ body{
 }
 
 .main .main-intro .reg-form .form-bg{
-    /* width:330px; */
     background-color:#ffffff;
     margin:20px 20px 0px 20px;
     padding:2px 25px 20px 20px;
@@ -139,10 +110,37 @@ body{
     border: 2px solid #cbcbcb;
     outline:none;
     font-family: "MetaPro";
+    text-indent: 10px;
+}
+
+.main .main-intro .reg-form .form-bg input[id="phone"]{
+    font-family: 'Lucida Sans' !important;
+}
+
+.main .main-intro .reg-form .form-bg input[id="phone"]::placeholder{
+    font-family: "MetaPro";
+}
+
+.main .main-intro .reg-form .form-bg select{
+    font-size: 15px;
+    height: 40px;
+    width: 102%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 2px solid #cbcbcb;
+    outline: none;
+    font-family: sans-serif;
+    text-indent: 10px;
+}
+.main .main-intro .reg-form .form-bg select option:first-child{
+    color:#5b5b5b;
+}
+
+.main .main-intro .reg-form .form-bg select option {
+    font-family:'Lucida Sans';
 }
 
 .main .main-intro .reg-form .form-bg input::placeholder{
-    padding-left: 10px;
     color:#5b5b5b;
 }
 .main .main-intro .reg-form .form-bg span{
@@ -154,7 +152,6 @@ body{
     color:#676767;
     margin-top: 0;
     margin-left: 5px;
-    /* margin-bottom: 30px; */
     padding-top: 0;
     line-height: 15px;
 }
@@ -170,6 +167,7 @@ body{
     border-radius: 5px;
     font-family: "MetaPro";
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .main .main-intro .intro{
@@ -238,6 +236,7 @@ body{
     background-color: #ffffff;
     color:#000;
     cursor: pointer;
+    font-weight: 600;
 }
 .curriculum-snapshot .curriculums-main .content-box .label::before{
     content: '+';
@@ -248,8 +247,12 @@ body{
     font-size: 25px;
     font-weight: bold;
 }
-.curriculum-snapshot .curriculums-main .content-box.active .label::before{
-    content: ' ';
+
+
+.curriculum-snapshot .curriculums-main .content-box.active .label::before {
+    content: '-';
+    font-size: 25px;
+    right: 15px;
 }
 
 .curriculum-snapshot .curriculums-main .content-box .content{
@@ -284,7 +287,6 @@ body{
 }
 
 .learning-outcome .lo-main .lo-body ul{
-    /* padding: 0; */
     margin: 0;
 }
 
@@ -324,6 +326,7 @@ body{
 .testimonials .slider .slides{
     width: 500%;
     display: flex;
+    transition: 2s;
 }
 .testimonials .slider .slides input{
     display: none;
@@ -639,7 +642,6 @@ body{
         bottom: 0px;
         left: 0px;
         right: 0px;
-        /* padding: 20px 0px; */
     }
     .footer-desktop div{
         display: flex;
@@ -760,7 +762,6 @@ body{
     }
     
     .main .main-intro .reg-form .form-bg input::placeholder{
-        padding-left: 10px;
         color:#5b5b5b;
     }
     .main .main-intro .reg-form .form-bg span{
@@ -864,8 +865,6 @@ body{
         position: absolute;
         top: 3%;
         width: auto;
-        /* padding: 16px; */
-        /* margin-top: -22px; */
         color: black;
         font-weight: bold;
         font-size: 18px;
@@ -892,9 +891,6 @@ body{
           max-width: 70px;
       }
 
-      .prev:hover, .next:hover {
-        background-color: rgba(0,0,0,0.8);
-      }
       .slides-container .Slides{
           padding: 0px 0px 40px 0px;
       }
@@ -946,6 +942,5 @@ body{
 
       footer button{
           width: 15%;
-      }
-      
+      }   
 }
